@@ -1,0 +1,1 @@
+call createsis create -cert gnuboy.cer -key gnuboy.key gnuboy_urel.pkg

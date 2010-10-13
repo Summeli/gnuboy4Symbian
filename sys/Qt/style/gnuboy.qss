@@ -1,0 +1,142 @@
+/* The background of the tab bar */
+QMainWindow {
+  background: #bcbfc8;
+  color: #751a56;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+QWidget {
+  background: #bcbfc8;
+  color: #751a56;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+QStackedWidget {
+  padding: 0;
+  margin: 0;
+}
+    
+/* Dialogs */
+QDialog {
+  background: #bcbfc8;
+  color: #751a56;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #666;
+}
+    
+/* Form fields */
+QLabel {
+  background: #bcbfc8;
+  padding: 0;
+  margin: 0;
+}
+
+
+QCheckBox {
+  background: none;
+  color: #751a56;
+}
+
+
+QCheckBox:focus {
+  color: #751a56;
+}
+
+
+QLineEdit, QTextEdit {
+  border: 1px solid gray;
+  background: none;
+  padding: 0.2em;
+  color: #751a56;
+  border-radius: 3px;
+}
+
+
+QLineEdit:focus, QTextEdit:focus {
+  border: 1px solid black;
+  color: black;
+}
+
+/* fun color to use with some texts
+color: #75ffb2; */
+/* background: #333;*/
+QPushButton {
+  background: #5e6a78;
+  border: 1px solid #666;
+  padding: 0.4em;
+  color: #36255c;
+  font: normal normal 6pt;
+  border-radius: 3px;
+}
+
+/*TODO: use this same color in other places too*/
+QPushButton:pressed {
+  background: #36255c;
+}
+
+
+/* QComboBox/QDateTime specials */
+QComboBox, QDateTimeEdit {
+  background: #5e6a78;
+  border: 1px solid #666;
+  padding: 0.4em;
+  color: #36255c;
+  font: normal normal 6pt;
+  border-radius: 3px;
+}
+
+
+QComboBox:focus, QDateTimeEdit:focus {
+  border: 1px solid #666;
+  color: #751a56;
+}
+
+   
+QComboBox::drop-down, QDateTimeEdit::drop-down {
+ border: 1px solid #666;
+ margin: -1px;
+ border: 1px solid gray;
+ width: 1.3em;
+ border-radius: 3px;
+}
+
+
+QComboBox::down-arrow, QDateTimeEdit::down-arrow {
+image: url(:/graphics/gfx/downarrow.png);
+}
+
+QSlider::groove:horizontal {
+   border: 1px solid #333;
+   background: #555;
+   margin: 2px 0;
+ }
+
+QSlider::handle:horizontal {
+ background: #36255c;
+ border: 1px solid #000000;
+ width: 18px;
+ margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+ border-radius: 3px;
+ }
+
+QGroupBox {
+  background: #bcbfc8; 
+  padding: 0;
+  margin: 0;
+  border: 1px solid #666;
+  color: #36255c;
+ }
+
+QGroupBox::title {
+ subcontrol-origin: margin;
+ subcontrol-position: top left; /* position at the top left */
+ padding: 0 3px;
+ background-color: #bcbfc8;
+ color: #36255c;
+ }
+ 

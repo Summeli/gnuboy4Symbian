@@ -1,0 +1,20 @@
+; Language
+&EN
+
+
+#{"gnuboy"}, (0xE0D278F9), 0, 5, 0 
+; Localised Vendor name
+%{"Summeli"}
+
+; Unique Vendor name
+:"Summeli"
+
+; Supports Series 60 v 5.0
+[0x1028315F], 0, 0, 0, {"S60ProductID"}
+; Executable and default resource files
+"/S60/devices/S60_5th_Edition_SDK_v1.0/epoc32/release/GCCE/UDEB/gnuboy.exe"    - "!:\sys\bin\gnuboy.exe"
+"/S60/devices/S60_5th_Edition_SDK_v1.0/epoc32/data/z/resource/apps/gnuboy.rsc"    - "!:\resource\apps\gnuboy.rsc"
+"/S60/devices/S60_5th_Edition_SDK_v1.0/epoc32/data/z/private/10003a3f/import/apps/gnuboy_reg.rsc"    - "!:\private\10003a3f\import\apps\gnuboy_reg.rsc"
+"/S60/devices/S60_5th_Edition_SDK_v1.0/epoc32/data/z/resource/apps/gnuboy.mif"    - "!:\resource\apps\gnuboy.mif"
+
+; Manual PKG post-rules from PRO files

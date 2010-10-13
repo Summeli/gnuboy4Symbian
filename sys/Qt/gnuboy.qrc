@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>style/gnuboy.qss</file>
+    </qresource>
+    <qresource prefix="/graphics">
+        <file>gfx/dpad.png</file>
+        <file>gfx/triggers.png</file>
+        <file>gfx/gnuboy_logo.png</file>
+        <file>gfx/downarrow.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,62 @@
+
+
+TARGET			gnuboylib.lib
+TARGETTYPE 		LIB
+
+EPOCHEAPSIZE 6000000 64000000
+EPOCSTACKSIZE 80000
+
+//OPTION GCCE -march=armv5t -O0
+
+//OPTION GCCE -march=armv5t -O0 -fexpensive-optimizations -finline -finline-function -ffast-math -msoft-float -falign-functions=32 -falign-loops -falign-labels -falign-jumps -fomit-frame-pointer
+
+OPTION CW -wchar_t on
+MACRO  _WCHAR_T_DECLARED
+
+
+SOURCEPATH		..\..\..\
+
+SOURCE			cpu.c
+SOURCE			debug.c
+SOURCE			emu.c
+SOURCE			events.c
+SOURCE			exports.c
+SOURCE			fastmem.c
+SOURCE			hw.c
+SOURCE			keytable.c
+SOURCE			lcd.c
+SOURCE			lcdc.c
+SOURCE			lj_gb.c
+SOURCE			loader.c
+SOURCE			mem.c
+SOURCE			palette.c
+SOURCE			path.c
+SOURCE			rccmds.c
+SOURCE			rcfile.c
+SOURCE			rckeys.c
+SOURCE			rcvars.c
+SOURCE			refresh.c
+SOURCE			rtc.c
+SOURCE			save.c
+SOURCE			sound.c
+SOURCE			split.c
+
+//Symbian stuff
+
+//USERINCLUDES
+USERINCLUDE     ..\..\..
+
+
+SYSTEMINCLUDE	 \epoc32\include
+SYSTEMINCLUDE	 \epoc32\include\libc
+SYSTEMINCLUDE	 \epoc32\include\stdapis\stlport
+SYSTEMINCLUDE	 \epoc32\include\stdapis\glib-2.0\glib
+
+//SYSTEMINCLUDE	 \epoc32\include\stdapis
+//SYSTEMINCLUDE	 \epoc32\include\stdapis\sys
+
+
+#ifdef ENABLE_ABIV2_MODE
+DEBUGGABLE_UDEBONLY
+#endif
+// End of File
