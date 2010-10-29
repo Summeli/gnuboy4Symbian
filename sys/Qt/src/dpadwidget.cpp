@@ -55,6 +55,7 @@ void DPadWidget::mouseReleaseEvent(QMouseEvent* event )
 	{
 	__DEBUG_IN
 	emit(virtualKeyEvent(prevkeys,false));
+	prevkeys = 0;
 	__DEBUG_OUT
 	}
 

@@ -121,7 +121,7 @@ void EmuSettings::loadROM()
     QString rom = QFileDialog::getOpenFileName(this,
                     tr("Open File"),
                     dir.absolutePath(),
-                    tr("ROMs (*.GB *.gb *.zip *.ZIP);;"));
+                    tr("ROMs (*.GB *.gb *gbc *GBC *.zip *.ZIP);;"));
     if( rom.isEmpty() )
         {
 		return;
