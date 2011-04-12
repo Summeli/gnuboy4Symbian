@@ -1,7 +1,8 @@
 TEMPLATE = app
 TARGET = gnuboy
 QT += core \
-    gui #\ multimedia
+    gui \ 
+    opengl #\ multimedia
 HEADERS += inc/filewidget.h \
     inc/dpadwidget.h \
 	inc/QRemoteControlKeys.h \
@@ -13,13 +14,13 @@ HEADERS += inc/filewidget.h \
     inc/viewcontroller.h \
     inc/emusettings.h \
     inc/gnuboyadaptation.h \
-    inc/QBlitterWidget.h \
     inc/gnuboySettings \
     inc/gnuboy4Qt.h \
     inc/cuteErrorDialog.h \
     inc/rightbuttonwidget.h \
     inc/audio.h \
-    inc/brightnessController.h
+    inc/brightnessController.h \
+    inc/glBlitter.h
             
 SOURCES += src/cuteErrorDialog.cpp \
     src/filewidget.cpp \
@@ -34,25 +35,25 @@ SOURCES += src/cuteErrorDialog.cpp \
     src/emusettings.cpp \
     src/cuteDebug.cpp \
     src/gnuboyadaptation.cpp \
-    src/QBlitterWidget.cpp \
     src/main.cpp \
     src/gnuboy4Qt.cpp \
     src/bitmapblit.cpp \
     src/rightbuttonwidget.cpp \
     src/brightnessController.cpp \
     src/audio.cpp \
-    src/sound_symbian.cpp
+    src/sound_symbian.cpp \
+    src/glblitter.cpp
     
-FORMS += ui_symbian/cuteErrorDialog.ui \
-    ui_symbian/filewidget.ui \
-    ui_symbian/dpadwidget.ui \
-    ui_symbian/aboutdialog.ui \
-    ui_symbian/controlsettings.ui \
-    ui_symbian/videosettings.ui \
-    ui_symbian/keyconfigdialog.ui \
-    ui_symbian/audiosettings.ui \
-    ui_symbian/emusettings.ui \
-    ui_symbian/rightbuttonwidget.ui  
+FORMS += ui/cuteErrorDialog.ui \
+    ui/filewidget.ui \
+    ui/dpadwidget.ui \
+    ui/aboutdialog.ui \
+    ui/controlsettings.ui \
+    ui/videosettings.ui \
+    ui/keyconfigdialog.ui \
+    ui/audiosettings.ui \
+    ui/emusettings.ui \
+    ui/rightbuttonwidget.ui  
 
 RESOURCES += gnuboy.qrc
 
@@ -67,7 +68,9 @@ symbian:LIBS += -lgnuboylib.lib \
     -lremconcoreapi \
     -lremconinterfacebase \
     -lecom \
-    -lhwrmlightclient \
+    -lhwrmlightclient \ 
+    -llibEGL  \
+    -llibGLESv2 \
     -lmmfcontrollerframework #TODO: remove when audio can be removed..
  symbian:TARGET.UID3 \
     = \

@@ -30,6 +30,7 @@
 //qt headers
 #include <QDir>
 #include <QApplication>
+#include <QImage>
 
 extern MEmulatorAdaptation* g_adaption;
 gnuboyadaptation* g_gnuAdapt;
@@ -38,6 +39,7 @@ unsigned short *BaseAddress;
 quint8 paused;
 
 quint32 adaptationkey = 0;
+QImage* g_screen = 0;
 
 int __emulation_run;
 extern "C" int gnuboy_main(char* filename);
@@ -52,7 +54,7 @@ extern "C" void app_DemuteSound(void);
 extern "C" void app_MuteSound(void);
 extern "C" void app_SetSvsFile(char* filename);
 
-gnuboyadaptation::gnuboyadaptation( QBlitterWidget* widget  )
+gnuboyadaptation::gnuboyadaptation( glBlitter* widget  )
     {
     blitter = widget;
     g_gnuAdapt = this;
@@ -66,7 +68,7 @@ void gnuboyadaptation::run()
 #ifdef ENABLE_AUDIO
     initAudio();
 #endif
-	connect(this, SIGNAL(frameblit()), blitter, SLOT(render()), 
+	connect(this, SIGNAL(frameblit()), blitter, SLOT(update()), 
 			Qt::BlockingQueuedConnection );
 	
 	//set all defaults
@@ -164,21 +166,7 @@ void gnuboyadaptation::exitgpsp()
 void gnuboyadaptation::blit( )
 	{
     __DEBUG_IN
-    if(!m_counter)
-    	{
-    	m_counter = 10;
-    	m_skip = gsettings.iFrameSkip;
-    	}
-    if( m_skip )
-    	{
-    	m_skip--;
-    	}
-    else
-    	{
-    	emit(frameblit());
-    	m_skip = gsettings.iFrameSkip;
-    	}
-    m_counter--;  
+    emit(frameblit());
     __DEBUG_OUT
 	}
 
@@ -232,4 +220,3 @@ void app_SetSvsFile(char* filename)
 	{
 	
 	}
-

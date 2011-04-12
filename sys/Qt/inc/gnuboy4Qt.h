@@ -25,7 +25,8 @@
 #include <QList>
 #include <QThread>
 
-#include "QBlitterWidget.h"
+#include "glBlitter.h"
+
 #include "dpadwidget.h" 
 #include "gnuboySettings.h"
 #include "MEmulatorAdaptation.h"
@@ -82,7 +83,7 @@ private slots:
 	void listencontrols();
     
 private:
-    QBlitterWidget* widget;
+	glBlitter* widget;
     
     TGnuboySettings iSettings;
     QList<antKeyEvent> iPressedKeys;

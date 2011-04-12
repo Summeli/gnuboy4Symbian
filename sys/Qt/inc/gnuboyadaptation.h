@@ -23,7 +23,7 @@
 #include <QThread>
 
 
-#include "QBlitterWidget.h"
+#include "glBlitter.h"
 #include "gnuboySettings.h"
 
 /* the gnuboyadaptation is basically the emulation thread
@@ -35,7 +35,7 @@ class gnuboyadaptation : public QThread
     Q_OBJECT
 
 public:
-    gnuboyadaptation( QBlitterWidget* widget );
+    gnuboyadaptation( glBlitter* widget );
     ~gnuboyadaptation();
     
     virtual void run();
@@ -61,7 +61,7 @@ signals:
     void dispatchErrorNote( QString message );
     
 private:
-    QBlitterWidget* blitter; //not owned
+    glBlitter* blitter; //not owned
     TGnuboySettings gsettings;
     QString rom;
     

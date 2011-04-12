@@ -36,6 +36,7 @@ gnuboy4Qt::gnuboy4Qt(QWidget *parent)
 	showFullScreen();
 	
     //create button widgets
+	
     dpad = new DPadWidget( this );
     dpad->setGeometry(QRect(0, 0, 180, 360));
     dpad->show();
@@ -48,14 +49,14 @@ gnuboy4Qt::gnuboy4Qt(QWidget *parent)
     connect(rsmallwidget, SIGNAL(virtualKeyEvent(quint32, bool)), this, SLOT( virtualKeyEvent(quint32, bool)) );
     
     
-    widget = new QBlitterWidget( this );
-    widget->setObjectName(QString::fromUtf8("QBlitterWidget"));
+    widget = new glBlitter( this );
+    //widget->setObjectName(QString::fromUtf8("QBlitterWidget"));
     widget->setGeometry(QRect(180, 0, 580, 360));
     
     adaptation = new gnuboyadaptation( widget );
     
-    connect(this, SIGNAL(Start()), widget, SLOT(startDSA()) );
-    connect(this, SIGNAL(Stop()), widget, SLOT(stopDSA()) );
+  //  connect(this, SIGNAL(Start()), widget, SLOT(startDSA()) );
+  //  connect(this, SIGNAL(Stop()), widget, SLOT(stopDSA()) );
     
     
     //connect all adaptation stuff
